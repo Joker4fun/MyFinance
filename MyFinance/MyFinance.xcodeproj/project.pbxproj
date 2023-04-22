@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C56B299E29F41737004EC15A /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56B299929F41737004EC15A /* TabView.swift */; };
+		C56B299F29F41737004EC15A /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56B299A29F41737004EC15A /* DataModel.swift */; };
+		C56B29A029F41737004EC15A /* ExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56B299B29F41737004EC15A /* ExpensesView.swift */; };
+		C56B29A129F41737004EC15A /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56B299C29F41737004EC15A /* ChartView.swift */; };
+		C56B29A229F41737004EC15A /* IncomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56B299D29F41737004EC15A /* IncomeView.swift */; };
 		C573F24829EF2895002B6EF8 /* MyFinanceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C573F24729EF2895002B6EF8 /* MyFinanceApp.swift */; };
 		C573F24A29EF2895002B6EF8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C573F24929EF2895002B6EF8 /* ContentView.swift */; };
 		C573F24C29EF2896002B6EF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C573F24B29EF2896002B6EF8 /* Assets.xcassets */; };
@@ -16,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C56B299929F41737004EC15A /* TabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		C56B299A29F41737004EC15A /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		C56B299B29F41737004EC15A /* ExpensesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesView.swift; sourceTree = "<group>"; };
+		C56B299C29F41737004EC15A /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		C56B299D29F41737004EC15A /* IncomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomeView.swift; sourceTree = "<group>"; };
 		C573F24429EF2895002B6EF8 /* MyFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C573F24729EF2895002B6EF8 /* MyFinanceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFinanceApp.swift; sourceTree = "<group>"; };
 		C573F24929EF2895002B6EF8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -39,6 +49,11 @@
 		C573F23B29EF2895002B6EF8 = {
 			isa = PBXGroup;
 			children = (
+				C56B299C29F41737004EC15A /* ChartView.swift */,
+				C56B299A29F41737004EC15A /* DataModel.swift */,
+				C56B299B29F41737004EC15A /* ExpensesView.swift */,
+				C56B299D29F41737004EC15A /* IncomeView.swift */,
+				C56B299929F41737004EC15A /* TabView.swift */,
 				C573F24629EF2895002B6EF8 /* MyFinance */,
 				C573F24529EF2895002B6EF8 /* Products */,
 			);
@@ -143,10 +158,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C56B299E29F41737004EC15A /* TabView.swift in Sources */,
+				C56B29A229F41737004EC15A /* IncomeView.swift in Sources */,
 				C573F25429EF2896002B6EF8 /* MyFinance.xcdatamodeld in Sources */,
 				C573F25129EF2896002B6EF8 /* Persistence.swift in Sources */,
+				C56B29A029F41737004EC15A /* ExpensesView.swift in Sources */,
 				C573F24A29EF2895002B6EF8 /* ContentView.swift in Sources */,
 				C573F24829EF2895002B6EF8 /* MyFinanceApp.swift in Sources */,
+				C56B299F29F41737004EC15A /* DataModel.swift in Sources */,
+				C56B29A129F41737004EC15A /* ChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
