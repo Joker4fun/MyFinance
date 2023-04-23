@@ -13,7 +13,7 @@ struct MyFinanceApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabbView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

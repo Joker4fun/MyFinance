@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C56B299E29F41737004EC15A /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56B299929F41737004EC15A /* TabView.swift */; };
-		C56B299F29F41737004EC15A /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56B299A29F41737004EC15A /* DataModel.swift */; };
+		C56B299F29F41737004EC15A /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56B299A29F41737004EC15A /* ModelData.swift */; };
 		C56B29A029F41737004EC15A /* ExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56B299B29F41737004EC15A /* ExpensesView.swift */; };
 		C56B29A129F41737004EC15A /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56B299C29F41737004EC15A /* ChartView.swift */; };
 		C56B29A229F41737004EC15A /* IncomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56B299D29F41737004EC15A /* IncomeView.swift */; };
@@ -18,11 +18,38 @@
 		C573F24F29EF2896002B6EF8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C573F24E29EF2896002B6EF8 /* Preview Assets.xcassets */; };
 		C573F25129EF2896002B6EF8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C573F25029EF2896002B6EF8 /* Persistence.swift */; };
 		C573F25429EF2896002B6EF8 /* MyFinance.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C573F25229EF2896002B6EF8 /* MyFinance.xcdatamodeld */; };
+		C5AACB6D29F42B040008E4E6 /* addButtonMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AACB6C29F42B040008E4E6 /* addButtonMain.swift */; };
+		C5AACB7529F42E3D0008E4E6 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AACB7429F42E3D0008E4E6 /* KeyboardViewController.swift */; };
+		C5AACB7929F42E3D0008E4E6 /* keyboardAdd.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C5AACB7229F42E3D0008E4E6 /* keyboardAdd.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C5AACB7729F42E3D0008E4E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C573F23C29EF2895002B6EF8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C5AACB7129F42E3D0008E4E6;
+			remoteInfo = keyboardAdd;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C5AACB7D29F42E3D0008E4E6 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C5AACB7929F42E3D0008E4E6 /* keyboardAdd.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C56B299929F41737004EC15A /* TabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
-		C56B299A29F41737004EC15A /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		C56B299A29F41737004EC15A /* ModelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		C56B299B29F41737004EC15A /* ExpensesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesView.swift; sourceTree = "<group>"; };
 		C56B299C29F41737004EC15A /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		C56B299D29F41737004EC15A /* IncomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomeView.swift; sourceTree = "<group>"; };
@@ -33,10 +60,21 @@
 		C573F24E29EF2896002B6EF8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C573F25029EF2896002B6EF8 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		C573F25329EF2896002B6EF8 /* MyFinance.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyFinance.xcdatamodel; sourceTree = "<group>"; };
+		C5AACB6C29F42B040008E4E6 /* addButtonMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addButtonMain.swift; sourceTree = "<group>"; };
+		C5AACB7229F42E3D0008E4E6 /* keyboardAdd.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = keyboardAdd.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5AACB7429F42E3D0008E4E6 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		C5AACB7629F42E3D0008E4E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C573F24129EF2895002B6EF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5AACB6F29F42E3D0008E4E6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -49,12 +87,8 @@
 		C573F23B29EF2895002B6EF8 = {
 			isa = PBXGroup;
 			children = (
-				C56B299C29F41737004EC15A /* ChartView.swift */,
-				C56B299A29F41737004EC15A /* DataModel.swift */,
-				C56B299B29F41737004EC15A /* ExpensesView.swift */,
-				C56B299D29F41737004EC15A /* IncomeView.swift */,
-				C56B299929F41737004EC15A /* TabView.swift */,
 				C573F24629EF2895002B6EF8 /* MyFinance */,
+				C5AACB7329F42E3D0008E4E6 /* keyboardAdd */,
 				C573F24529EF2895002B6EF8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				C573F24429EF2895002B6EF8 /* MyFinance.app */,
+				C5AACB7229F42E3D0008E4E6 /* keyboardAdd.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +105,12 @@
 		C573F24629EF2895002B6EF8 /* MyFinance */ = {
 			isa = PBXGroup;
 			children = (
+				C56B299C29F41737004EC15A /* ChartView.swift */,
+				C56B299A29F41737004EC15A /* ModelData.swift */,
+				C56B299B29F41737004EC15A /* ExpensesView.swift */,
+				C56B299D29F41737004EC15A /* IncomeView.swift */,
+				C5AACB6C29F42B040008E4E6 /* addButtonMain.swift */,
+				C56B299929F41737004EC15A /* TabView.swift */,
 				C573F24729EF2895002B6EF8 /* MyFinanceApp.swift */,
 				C573F24929EF2895002B6EF8 /* ContentView.swift */,
 				C573F24B29EF2896002B6EF8 /* Assets.xcassets */,
@@ -88,6 +129,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		C5AACB7329F42E3D0008E4E6 /* keyboardAdd */ = {
+			isa = PBXGroup;
+			children = (
+				C5AACB7429F42E3D0008E4E6 /* KeyboardViewController.swift */,
+				C5AACB7629F42E3D0008E4E6 /* Info.plist */,
+			);
+			path = keyboardAdd;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -98,15 +148,34 @@
 				C573F24029EF2895002B6EF8 /* Sources */,
 				C573F24129EF2895002B6EF8 /* Frameworks */,
 				C573F24229EF2895002B6EF8 /* Resources */,
+				C5AACB7D29F42E3D0008E4E6 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C5AACB7829F42E3D0008E4E6 /* PBXTargetDependency */,
 			);
 			name = MyFinance;
 			productName = MyFinance;
 			productReference = C573F24429EF2895002B6EF8 /* MyFinance.app */;
 			productType = "com.apple.product-type.application";
+		};
+		C5AACB7129F42E3D0008E4E6 /* keyboardAdd */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C5AACB7A29F42E3D0008E4E6 /* Build configuration list for PBXNativeTarget "keyboardAdd" */;
+			buildPhases = (
+				C5AACB6E29F42E3D0008E4E6 /* Sources */,
+				C5AACB6F29F42E3D0008E4E6 /* Frameworks */,
+				C5AACB7029F42E3D0008E4E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = keyboardAdd;
+			productName = keyboardAdd;
+			productReference = C5AACB7229F42E3D0008E4E6 /* keyboardAdd.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -119,6 +188,9 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					C573F24329EF2895002B6EF8 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					C5AACB7129F42E3D0008E4E6 = {
 						CreatedOnToolsVersion = 14.3;
 					};
 				};
@@ -137,6 +209,7 @@
 			projectRoot = "";
 			targets = (
 				C573F24329EF2895002B6EF8 /* MyFinance */,
+				C5AACB7129F42E3D0008E4E6 /* keyboardAdd */,
 			);
 		};
 /* End PBXProject section */
@@ -151,6 +224,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C5AACB7029F42E3D0008E4E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -162,15 +242,32 @@
 				C56B29A229F41737004EC15A /* IncomeView.swift in Sources */,
 				C573F25429EF2896002B6EF8 /* MyFinance.xcdatamodeld in Sources */,
 				C573F25129EF2896002B6EF8 /* Persistence.swift in Sources */,
+				C5AACB6D29F42B040008E4E6 /* addButtonMain.swift in Sources */,
 				C56B29A029F41737004EC15A /* ExpensesView.swift in Sources */,
 				C573F24A29EF2895002B6EF8 /* ContentView.swift in Sources */,
 				C573F24829EF2895002B6EF8 /* MyFinanceApp.swift in Sources */,
-				C56B299F29F41737004EC15A /* DataModel.swift in Sources */,
+				C56B299F29F41737004EC15A /* ModelData.swift in Sources */,
 				C56B29A129F41737004EC15A /* ChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C5AACB6E29F42E3D0008E4E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5AACB7529F42E3D0008E4E6 /* KeyboardViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C5AACB7829F42E3D0008E4E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C5AACB7129F42E3D0008E4E6 /* keyboardAdd */;
+			targetProxy = C5AACB7729F42E3D0008E4E6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		C573F25529EF2896002B6EF8 /* Debug */ = {
@@ -290,6 +387,7 @@
 		C573F25829EF2896002B6EF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -319,6 +417,7 @@
 		C573F25929EF2896002B6EF8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -345,6 +444,56 @@
 			};
 			name = Release;
 		};
+		C5AACB7B29F42E3D0008E4E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 769L2N8FTJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = keyboardAdd/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = keyboardAdd;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = KazennovAI.MyFinance.keyboardAdd;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C5AACB7C29F42E3D0008E4E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 769L2N8FTJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = keyboardAdd/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = keyboardAdd;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = KazennovAI.MyFinance.keyboardAdd;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -362,6 +511,15 @@
 			buildConfigurations = (
 				C573F25829EF2896002B6EF8 /* Debug */,
 				C573F25929EF2896002B6EF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C5AACB7A29F42E3D0008E4E6 /* Build configuration list for PBXNativeTarget "keyboardAdd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5AACB7B29F42E3D0008E4E6 /* Debug */,
+				C5AACB7C29F42E3D0008E4E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

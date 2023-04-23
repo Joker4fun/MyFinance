@@ -9,7 +9,19 @@ import SwiftUI
 
 struct IncomeView: View {
     
-    @State var currentBalance:Int = 20
+    @Environment(\.managedObjectContext) private var viewContext
+
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        animation: .easeOut)
+    private var items: FetchedResults<Item>
+
+
+    
+    @State var currentBalance:Double = 0.rounded(.towardZero)
+    @State private var showingSheet = false
+
+
     
     var body: some View {
         NavigationView {
@@ -17,7 +29,7 @@ struct IncomeView: View {
                 HStack {
                     Text("Текущий баланс:")
                     Spacer()
-                    Text("\(currentBalance)")
+                    Text("\(currentBalance.rounded(.towardZero))")
                     Image(systemName: "rublesign")
 
                 }
@@ -32,8 +44,14 @@ struct IncomeView: View {
                 
                 VStack {
                     Button("Добавить доход") {
-                        addNew()
+                        showingSheet.toggle()
                     }
+                    .sheet(isPresented: $showingSheet) {
+                                addButtonMain()
+                            .presentationDetents([.height(100)])
+
+                            }
+                    .keyboardType(.numberPad)
                     .frame(maxWidth: .infinity)
                     .padding(.vertical)
                     .background(.blue)
@@ -44,14 +62,19 @@ struct IncomeView: View {
                 .frame(alignment: .bottom)
             }
         }
+        .onAppear {
+            
+        }
         .navigationBarTitle("hello")
         .navigationTitle("hello")
 
 
     }
+
     func addNew() {
         
     }
+
 }
 
 
