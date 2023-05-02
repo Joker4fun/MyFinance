@@ -7,15 +7,18 @@
 
 import SwiftUI
 
+
+
 struct TabbView: View {
+    
+    
     var body: some View {
         NavigationView {
             TabView {
                 IncomeView(currentBalance: 20)
                     .tabItem {
                         Text("Доходы")
-                        Image("dollar")
-                            .renderingMode(.template)
+                        Image(systemName: "dollarsign.circle")
                         
                     }
                 

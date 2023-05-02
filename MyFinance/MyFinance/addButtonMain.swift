@@ -10,12 +10,8 @@ import SwiftUI
 struct addButtonMain: View {
     
     
-    @Environment(\.managedObjectContext) private var viewContext
-
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.balance, ascending: true)],
-        animation: .easeOut)
-    private var items: FetchedResults<Item>
+    @Environment(\.dismiss) var dismiss
+    @StateObject var vm = MainViewModel()
     
     @State var value:String = ""
     @FocusState private var keyboardFocused: Bool
@@ -40,14 +36,9 @@ struct addButtonMain: View {
                 
             Divider()
             Button("Добавить доход") {
-                let item = Item(context: viewContext)
-                item.balance += Double(value) ?? 0
-                do {
-                    try viewContext.save()
-                } catch {
-                    print(error.localizedDescription)
-                }
-                print(item.balance)
+                vm.addItem(num: Double(value) ?? 0)
+               // IncomeView(currentBalance: vm.totalBal)
+                dismiss.callAsFunction()
             }
             .frame(maxWidth: .infinity)
             .padding(.vertical)

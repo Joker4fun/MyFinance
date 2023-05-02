@@ -9,12 +9,9 @@ import SwiftUI
 
 @main
 struct MyFinanceApp: App {
-    let persistenceController = PersistenceController.shared
-
     var body: some Scene {
         WindowGroup {
             TabbView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
