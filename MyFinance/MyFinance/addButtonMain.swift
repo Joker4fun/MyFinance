@@ -9,7 +9,7 @@ import SwiftUI
 
 struct addButtonMain: View {
     
-    
+    @Environment(\.dismiss) var dissmis
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
@@ -19,6 +19,7 @@ struct addButtonMain: View {
     
     @State var value:String = ""
     @FocusState private var keyboardFocused: Bool
+    @Binding var newBalance:Double
     
     
     
@@ -40,31 +41,43 @@ struct addButtonMain: View {
                 
             Divider()
             Button("Добавить доход") {
-                let item = Item(context: viewContext)
-                item.balance += Double(value) ?? 0
-                do {
-                    try viewContext.save()
-                } catch {
-                    print(error.localizedDescription)
-                }
-                print(item.balance)
+                addItem(num: Double(value) ?? 0)
+                self.newBalance = items.map({ $0.balance }).reduce(0,+)
+
+                dissmis.callAsFunction()
             }
             .frame(maxWidth: .infinity)
             .padding(.vertical)
             .background(.blue)
             .cornerRadius(50)
             .tint(.white)
-            .buttonStyle(.automatic)
             .padding([.leading, .trailing], 20)
 
             
             
         }
+        
+    }
+    private func addItem(num: Double) {
+        withAnimation {
+            let newItem = Item(context: viewContext)
+            newItem.balance = Double(num)
+            newItem.time = Date.now
+            
+            do {
+                try viewContext.save()
+                print(newItem.balance)
+            } catch {
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+        }
     }
 }
 
-struct addButtonMain_Previews: PreviewProvider {
-    static var previews: some View {
-        addButtonMain()
-    }
-}
+//struct addButtonMain_Previews: PreviewProvider {
+//    static var previews: some View {
+//        addButtonMain(newBalance:items.map({ $0.balance }).reduce(0,+)
+//)
+//    }
+//}

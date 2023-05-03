@@ -13,9 +13,7 @@ struct TabbView: View {
             TabView {
                 IncomeView(currentBalance: 20)
                     .tabItem {
-                        Text("Доходы")
-                        Image("dollar")
-                            .renderingMode(.template)
+                        Label("Доходы", systemImage: "dollarsign.circle")
                         
                     }
                 

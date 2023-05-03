@@ -11,14 +11,18 @@ struct IncomeView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
 
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .easeOut)
+//    @FetchRequest(
+//        sortDescriptors: [NSSortDescriptor(keyPath: \Item.balance, ascending: false)],
+//        animation: .easeOut)
+    
+    @FetchRequest(sortDescriptors: [SortDescriptor(\Item.time, order: .reverse)])
+   
+  
     private var items: FetchedResults<Item>
 
 
     
-    @State var currentBalance:Double = 0.rounded(.towardZero)
+    @State var currentBalance:Double
     @State private var showingSheet = false
 
 
@@ -38,16 +42,20 @@ struct IncomeView: View {
                 Text("Доходы")
                     .font(.largeTitle)
                     .bold()
-                ScrollView {
-                    Text("dfg")
-                }
+        
+                    
+                    List(items) { language in
+                        Text(String(language.balance))
+                    }
+
+        
                 
                 VStack {
                     Button("Добавить доход") {
                         showingSheet.toggle()
                     }
                     .sheet(isPresented: $showingSheet) {
-                                addButtonMain()
+                        addButtonMain(newBalance: $currentBalance)
                             .presentationDetents([.height(100)])
 
                             }
@@ -63,8 +71,10 @@ struct IncomeView: View {
             }
         }
         .onAppear {
+            currentBalance = items.map({ $0.balance }).reduce(0,+)
             
         }
+
         .navigationBarTitle("hello")
         .navigationTitle("hello")
 
@@ -79,6 +89,7 @@ struct IncomeView: View {
 
 
 struct IncomeView_Previews: PreviewProvider {
+    @Environment(\.managedObjectContext) private var viewContext
     static var previews: some View {
         IncomeView(currentBalance: 20)
     }
