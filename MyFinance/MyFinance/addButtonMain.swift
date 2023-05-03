@@ -13,13 +13,13 @@ struct addButtonMain: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.balance, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \BalanceEntiti.moneyCount, ascending: true)],
         animation: .easeOut)
-    private var items: FetchedResults<Item>
+    private var items: FetchedResults<BalanceEntiti>
     
     @State var value:String = ""
     @FocusState private var keyboardFocused: Bool
-    @Binding var newBalance:Double
+    @Binding var newBalanceEntiti:Double
     
     
     
@@ -41,8 +41,8 @@ struct addButtonMain: View {
                 
             Divider()
             Button("Добавить доход") {
-                addItem(num: Double(value) ?? 0)
-                self.newBalance = items.map({ $0.balance }).reduce(0,+)
+                addBalanceEntiti(num: Double(value) ?? 0)
+                self.newBalanceEntiti = items.map({ $0.moneyCount }).reduce(0,+)
 
                 dissmis.callAsFunction()
             }
@@ -58,15 +58,15 @@ struct addButtonMain: View {
         }
         
     }
-    private func addItem(num: Double) {
+    private func addBalanceEntiti(num: Double) {
         withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.balance = Double(num)
-            newItem.time = Date.now
+            let newBalanceEntiti = BalanceEntiti(context: viewContext)
+            newBalanceEntiti.moneyCount = Double(num)
+            newBalanceEntiti.createDate = Date.now
             
             do {
                 try viewContext.save()
-                print(newItem.balance)
+                print(newBalanceEntiti.moneyCount)
             } catch {
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
@@ -77,7 +77,7 @@ struct addButtonMain: View {
 
 //struct addButtonMain_Previews: PreviewProvider {
 //    static var previews: some View {
-//        addButtonMain(newBalance:items.map({ $0.balance }).reduce(0,+)
+//        addButtonMain(newBalanceEntiti:items.map({ $0.balance }).reduce(0,+)
 //)
 //    }
 //}

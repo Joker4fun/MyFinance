@@ -11,7 +11,7 @@ struct TabbView: View {
     var body: some View {
         NavigationView {
             TabView {
-                IncomeView(currentBalance: 20)
+                IncomeView(currentBalanceEntiti: 20)
                     .tabItem {
                         Label("Доходы", systemImage: "dollarsign.circle")
                         

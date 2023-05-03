@@ -16,12 +16,12 @@ class MainViewModel: ObservableObject {
     
     static let shared = MainViewModel()
 
-    @Published var savedItem:[Item] = []
+    @Published var savedBalanceEntiti:[BalanceEntiti] = []
     
-    lazy var totalBalance: Double = {
+    lazy var totalBalanceEntiti: Double = {
         var summ:Double = 0.0
-        for i in savedItem {
-            summ += i.balance
+        for i in savedBalanceEntiti {
+            summ += i.moneyCount
         }
         totalBal = summ
         return summ
@@ -41,32 +41,32 @@ class MainViewModel: ObservableObject {
             }
         }
         container.viewContext.automaticallyMergesChangesFromParent = true
-        fetchItem()
-        print(totalBalance)
+        fetchBalanceEntiti()
+        print(totalBalanceEntiti)
     }
     
-    func fetchItem(){
-        let request = NSFetchRequest<Item>(entityName: "Item")
+    func fetchBalanceEntiti(){
+        let request = NSFetchRequest<BalanceEntiti>(entityName: "BalanceEntiti")
         do {
-            savedItem = try container.viewContext.fetch(request)
+            savedBalanceEntiti = try container.viewContext.fetch(request)
         } catch let error {
             print ("Error fetching. \(error)")
         }
     }
     
     
-    func addItem(num: Double) {
-        let item = Item(context: container.viewContext)
-        item.balance = num
+    func addBalanceEntiti(num: Double) {
+        let item = BalanceEntiti(context: container.viewContext)
+        item.moneyCount = num
         saveData()
-        print("\(item.balance)")
+        print("\(item.moneyCount)")
     }
     
     
     func saveData() {
         do {
             try container.viewContext.save()
-            fetchItem()
+            fetchBalanceEntiti()
         } catch let error {
             print("Error saving - \(error)")
         }

@@ -12,17 +12,17 @@ struct IncomeView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
 //    @FetchRequest(
-//        sortDescriptors: [NSSortDescriptor(keyPath: \Item.balance, ascending: false)],
+//        sortDescriptors: [NSSortDescriptor(keyPath: \BalanceEntiti.balance, ascending: false)],
 //        animation: .easeOut)
     
-    @FetchRequest(sortDescriptors: [SortDescriptor(\Item.time, order: .reverse)])
+    @FetchRequest(sortDescriptors: [SortDescriptor(\BalanceEntiti.createDate, order: .reverse)])
    
   
-    private var items: FetchedResults<Item>
+    private var items: FetchedResults<BalanceEntiti>
 
 
     
-    @State var currentBalance:Double
+    @State var currentBalanceEntiti:Double
     @State private var showingSheet = false
 
 
@@ -33,7 +33,7 @@ struct IncomeView: View {
                 HStack {
                     Text("Текущий баланс:")
                     Spacer()
-                    Text("\(currentBalance.rounded(.towardZero))")
+                    Text("\(currentBalanceEntiti.rounded(.towardZero))")
                     Image(systemName: "rublesign")
 
                 }
@@ -44,8 +44,8 @@ struct IncomeView: View {
                     .bold()
         
                     
-                    List(items) { language in
-                        Text(String(language.balance))
+                    List(items) { expen in
+                        Text(String(expen.moneyCount))
                     }
 
         
@@ -55,7 +55,7 @@ struct IncomeView: View {
                         showingSheet.toggle()
                     }
                     .sheet(isPresented: $showingSheet) {
-                        addButtonMain(newBalance: $currentBalance)
+                        addButtonMain(newBalanceEntiti: $currentBalanceEntiti)
                             .presentationDetents([.height(100)])
 
                             }
@@ -71,7 +71,7 @@ struct IncomeView: View {
             }
         }
         .onAppear {
-            currentBalance = items.map({ $0.balance }).reduce(0,+)
+            currentBalanceEntiti = items.map({ $0.moneyCount }).reduce(0,+)
             
         }
 
@@ -91,6 +91,6 @@ struct IncomeView: View {
 struct IncomeView_Previews: PreviewProvider {
     @Environment(\.managedObjectContext) private var viewContext
     static var previews: some View {
-        IncomeView(currentBalance: 20)
+        IncomeView(currentBalanceEntiti: 20)
     }
 }
