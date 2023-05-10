@@ -9,77 +9,96 @@ import SwiftUI
 
 struct IncomeView: View {
     
-    @StateObject var vm = MainViewModel()
+    @Environment(\.managedObjectContext) private var viewContext    
+    @FetchRequest(sortDescriptors: [SortDescriptor(\BalanceEntiti.createDate, order: .reverse)])
+   
+  
+    private var items: FetchedResults<BalanceEntiti>
+
 
     
-    @State var currentBalance:Double = 0
+    @State var currentBalanceEntiti:Double
     @State private var showingSheet = false
-    
+
+
     
     var body: some View {
-        
         NavigationView {
             VStack() {
                 HStack {
                     Text("Текущий баланс:")
+                        .padding(.leading)
                     Spacer()
-                    Text("\(vm.totalBal)")
+                    Text("\(currentBalanceEntiti.rounded(.towardZero))")
                     Image(systemName: "rublesign")
-                    
+                        .padding(.trailing)
+
                 }
-                
+
                 Spacer(minLength: 20)
                 Text("Доходы")
                     .font(.largeTitle)
                     .bold()
-                ScrollView {
-                    List {
-                        ForEach(vm.savedItem) { money in
-                            Text("hello")
-                           // print(money.balance)
+        
+                    List{
+        
+                        ForEach(items) { expen in
+                            Text(String(expen.moneyCount))
                         }
+                        .onDelete(perform: removeIncome(at:))
                     }
-                }
-                        
-                        
-                        VStack {
-                            Button("Добавить доход") {
-                                showingSheet.toggle()
-                            }
-                            .sheet(isPresented: $showingSheet) {
-                                addButtonMain()
-                                    .presentationDetents([.height(100)])
-                                    
-                                
-                            }
-                            .keyboardType(.numberPad)
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical)
-                            .background(.blue)
-                            .cornerRadius(50)
-                            .tint(.white)
-                        }
-                        .padding()
-                        .frame(alignment: .bottom)
+
+        
+                
+                VStack {
+                    Button("Добавить доход") {
+                        showingSheet.toggle()
                     }
+                    .sheet(isPresented: $showingSheet) {
+                        addButtonMain(newBalanceEntiti: $currentBalanceEntiti)
+                            .presentationDetents([.height(100)])
+
+                            }
+                    .keyboardType(.numberPad)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical)
+                    .background(.blue)
+                    .cornerRadius(50)
+                    .tint(.white)
                 }
-                .onAppear {
-                    currentBalance = vm.totalBal
-                }
-                .onChange(of: vm.totalBal, perform: { newValue in
-                    currentBalance = vm.totalBal
-                })
-                .navigationBarTitle("hello")
-                .navigationTitle("hello")
-                
-                
+                .padding()
+                .frame(alignment: .bottom)
             }
+        }
+        .onAppear {
+            currentBalanceEntiti = items.map({ $0.moneyCount }).reduce(0,+)
             
         }
-        
-        
-        struct IncomeView_Previews: PreviewProvider {
-            static var previews: some View {
-                IncomeView(currentBalance: 0)
-            }
+
+        .navigationBarTitle("hello")
+        .navigationTitle("hello")
+
+
+    }
+
+    func removeIncome(at offsets: IndexSet) {
+        for index in offsets {
+            let income = items[index]
+            viewContext.delete(income)
         }
+        do {
+            try viewContext.save()
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
+
+}
+
+
+struct IncomeView_Previews: PreviewProvider {
+    @Environment(\.managedObjectContext) private var viewContext
+    static var previews: some View {
+        IncomeView(currentBalanceEntiti: 20)
+    }
+}

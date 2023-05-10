@@ -9,12 +9,17 @@ import SwiftUI
 
 struct addButtonMain: View {
     
-    
-    @Environment(\.dismiss) var dismiss
-    @StateObject var vm = MainViewModel()
+    @Environment(\.dismiss) var dissmis
+    @Environment(\.managedObjectContext) private var viewContext
+
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \BalanceEntiti.moneyCount, ascending: true)],
+        animation: .easeOut)
+    private var items: FetchedResults<BalanceEntiti>
     
     @State var value:String = ""
     @FocusState private var keyboardFocused: Bool
+    @Binding var newBalanceEntiti:Double
     
     
     
@@ -36,26 +41,43 @@ struct addButtonMain: View {
                 
             Divider()
             Button("Добавить доход") {
-                vm.addItem(num: Double(value) ?? 0)
-               // IncomeView(currentBalance: vm.totalBal)
-                dismiss.callAsFunction()
+                addBalanceEntiti(num: Double(value) ?? 0)
+                self.newBalanceEntiti = items.map({ $0.moneyCount }).reduce(0,+)
+
+                dissmis.callAsFunction()
             }
             .frame(maxWidth: .infinity)
             .padding(.vertical)
             .background(.blue)
             .cornerRadius(50)
             .tint(.white)
-            .buttonStyle(.automatic)
             .padding([.leading, .trailing], 20)
 
             
             
         }
+        
+    }
+    private func addBalanceEntiti(num: Double) {
+        withAnimation {
+            let newBalanceEntiti = BalanceEntiti(context: viewContext)
+            newBalanceEntiti.moneyCount = Double(num)
+            newBalanceEntiti.createDate = Date.now
+            
+            do {
+                try viewContext.save()
+                print(newBalanceEntiti.moneyCount)
+            } catch {
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+        }
     }
 }
 
-struct addButtonMain_Previews: PreviewProvider {
-    static var previews: some View {
-        addButtonMain()
-    }
-}
+//struct addButtonMain_Previews: PreviewProvider {
+//    static var previews: some View {
+//        addButtonMain(newBalanceEntiti:items.map({ $0.balance }).reduce(0,+)
+//)
+//    }
+//}

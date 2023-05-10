@@ -7,18 +7,13 @@
 
 import SwiftUI
 
-
-
 struct TabbView: View {
-    
-    
     var body: some View {
         NavigationView {
             TabView {
-                IncomeView(currentBalance: 20)
+                IncomeView(currentBalanceEntiti: 20)
                     .tabItem {
-                        Text("Доходы")
-                        Image(systemName: "dollarsign.circle")
+                        Label("Доходы", systemImage: "dollarsign.circle")
                         
                     }
                 
@@ -27,7 +22,7 @@ struct TabbView: View {
                         Label("График", systemImage: "chart.xyaxis.line")
                     }
                 
-                ExpensesView()
+                CategoryView()
                     .tabItem {
                         Label("Расходы", systemImage: "circle.grid.3x3.circle")
                     }
