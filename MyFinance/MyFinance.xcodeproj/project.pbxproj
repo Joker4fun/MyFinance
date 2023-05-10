@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		C56B299E29F41737004EC15A /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56B299929F41737004EC15A /* TabView.swift */; };
 		C56B299F29F41737004EC15A /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56B299A29F41737004EC15A /* ModelData.swift */; };
-		C56B29A029F41737004EC15A /* ExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56B299B29F41737004EC15A /* ExpensesView.swift */; };
+		C56B29A029F41737004EC15A /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56B299B29F41737004EC15A /* CategoryView.swift */; };
 		C56B29A129F41737004EC15A /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56B299C29F41737004EC15A /* ChartView.swift */; };
 		C56B29A229F41737004EC15A /* IncomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56B299D29F41737004EC15A /* IncomeView.swift */; };
 		C573F24829EF2895002B6EF8 /* MyFinanceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C573F24729EF2895002B6EF8 /* MyFinanceApp.swift */; };
@@ -17,10 +17,18 @@
 		C573F24F29EF2896002B6EF8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C573F24E29EF2896002B6EF8 /* Preview Assets.xcassets */; };
 		C573F25129EF2896002B6EF8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C573F25029EF2896002B6EF8 /* Persistence.swift */; };
 		C573F25429EF2896002B6EF8 /* MyFinance.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C573F25229EF2896002B6EF8 /* MyFinance.xcdatamodeld */; };
+		C57742622A032C3B000BCDD3 /* addButtonCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57742612A032C3B000BCDD3 /* addButtonCategory.swift */; };
 		C5AACB6D29F42B040008E4E6 /* addButtonMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AACB6C29F42B040008E4E6 /* addButtonMain.swift */; };
 		C5AACB7529F42E3D0008E4E6 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AACB7429F42E3D0008E4E6 /* KeyboardViewController.swift */; };
 		C5AACB7929F42E3D0008E4E6 /* keyboardAdd.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C5AACB7229F42E3D0008E4E6 /* keyboardAdd.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C5AACB7F2A0071800008E4E6 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AACB7E2A0071800008E4E6 /* Model.swift */; };
+		C5D8069B2A083ADD00C12A5D /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D806972A083ADD00C12A5D /* Category+CoreDataClass.swift */; };
+		C5D8069C2A083ADD00C12A5D /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D806982A083ADD00C12A5D /* Category+CoreDataProperties.swift */; };
+		C5D8069D2A083ADD00C12A5D /* Expens+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D806992A083ADD00C12A5D /* Expens+CoreDataClass.swift */; };
+		C5D8069E2A083ADD00C12A5D /* Expens+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D8069A2A083ADD00C12A5D /* Expens+CoreDataProperties.swift */; };
+		C5D806A02A086C6800C12A5D /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D8069F2A086C6800C12A5D /* DetailVC.swift */; };
+		C5D806A22A098B8500C12A5D /* ExpensesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D806A12A098B8500C12A5D /* ExpensesButton.swift */; };
+		C5D806A42A099FF500C12A5D /* ListCellForExpensView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D806A32A099FF500C12A5D /* ListCellForExpensView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +58,7 @@
 /* Begin PBXFileReference section */
 		C56B299929F41737004EC15A /* TabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		C56B299A29F41737004EC15A /* ModelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
-		C56B299B29F41737004EC15A /* ExpensesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesView.swift; sourceTree = "<group>"; };
+		C56B299B29F41737004EC15A /* CategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		C56B299C29F41737004EC15A /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		C56B299D29F41737004EC15A /* IncomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomeView.swift; sourceTree = "<group>"; };
 		C573F24429EF2895002B6EF8 /* MyFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,11 +67,19 @@
 		C573F24E29EF2896002B6EF8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C573F25029EF2896002B6EF8 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		C573F25329EF2896002B6EF8 /* MyFinance.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyFinance.xcdatamodel; sourceTree = "<group>"; };
+		C57742612A032C3B000BCDD3 /* addButtonCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addButtonCategory.swift; sourceTree = "<group>"; };
 		C5AACB6C29F42B040008E4E6 /* addButtonMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addButtonMain.swift; sourceTree = "<group>"; };
 		C5AACB7229F42E3D0008E4E6 /* keyboardAdd.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = keyboardAdd.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5AACB7429F42E3D0008E4E6 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		C5AACB7629F42E3D0008E4E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5AACB7E2A0071800008E4E6 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		C5D806972A083ADD00C12A5D /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C5D806982A083ADD00C12A5D /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C5D806992A083ADD00C12A5D /* Expens+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expens+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C5D8069A2A083ADD00C12A5D /* Expens+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expens+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C5D8069F2A086C6800C12A5D /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		C5D806A12A098B8500C12A5D /* ExpensesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesButton.swift; sourceTree = "<group>"; };
+		C5D806A32A099FF500C12A5D /* ListCellForExpensView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellForExpensView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,12 +121,20 @@
 		C573F24629EF2895002B6EF8 /* MyFinance */ = {
 			isa = PBXGroup;
 			children = (
+				C5D806972A083ADD00C12A5D /* Category+CoreDataClass.swift */,
+				C5D806982A083ADD00C12A5D /* Category+CoreDataProperties.swift */,
+				C5D806992A083ADD00C12A5D /* Expens+CoreDataClass.swift */,
+				C5D8069A2A083ADD00C12A5D /* Expens+CoreDataProperties.swift */,
 				C56B299C29F41737004EC15A /* ChartView.swift */,
 				C56B299A29F41737004EC15A /* ModelData.swift */,
-				C56B299B29F41737004EC15A /* ExpensesView.swift */,
+				C56B299B29F41737004EC15A /* CategoryView.swift */,
+				C5D8069F2A086C6800C12A5D /* DetailVC.swift */,
+				C5D806A32A099FF500C12A5D /* ListCellForExpensView.swift */,
 				C56B299D29F41737004EC15A /* IncomeView.swift */,
 				C5AACB7E2A0071800008E4E6 /* Model.swift */,
 				C5AACB6C29F42B040008E4E6 /* addButtonMain.swift */,
+				C57742612A032C3B000BCDD3 /* addButtonCategory.swift */,
+				C5D806A12A098B8500C12A5D /* ExpensesButton.swift */,
 				C56B299929F41737004EC15A /* TabView.swift */,
 				C573F24729EF2895002B6EF8 /* MyFinanceApp.swift */,
 				C573F24B29EF2896002B6EF8 /* Assets.xcassets */,
@@ -239,14 +263,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				C56B299E29F41737004EC15A /* TabView.swift in Sources */,
+				C5D8069C2A083ADD00C12A5D /* Category+CoreDataProperties.swift in Sources */,
+				C5D8069B2A083ADD00C12A5D /* Category+CoreDataClass.swift in Sources */,
 				C56B29A229F41737004EC15A /* IncomeView.swift in Sources */,
 				C573F25429EF2896002B6EF8 /* MyFinance.xcdatamodeld in Sources */,
+				C5D806A42A099FF500C12A5D /* ListCellForExpensView.swift in Sources */,
+				C5D806A02A086C6800C12A5D /* DetailVC.swift in Sources */,
 				C573F25129EF2896002B6EF8 /* Persistence.swift in Sources */,
 				C5AACB6D29F42B040008E4E6 /* addButtonMain.swift in Sources */,
-				C56B29A029F41737004EC15A /* ExpensesView.swift in Sources */,
+				C5D8069E2A083ADD00C12A5D /* Expens+CoreDataProperties.swift in Sources */,
+				C56B29A029F41737004EC15A /* CategoryView.swift in Sources */,
 				C573F24829EF2895002B6EF8 /* MyFinanceApp.swift in Sources */,
+				C5D806A22A098B8500C12A5D /* ExpensesButton.swift in Sources */,
 				C5AACB7F2A0071800008E4E6 /* Model.swift in Sources */,
 				C56B299F29F41737004EC15A /* ModelData.swift in Sources */,
+				C57742622A032C3B000BCDD3 /* addButtonCategory.swift in Sources */,
+				C5D8069D2A083ADD00C12A5D /* Expens+CoreDataClass.swift in Sources */,
 				C56B29A129F41737004EC15A /* ChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

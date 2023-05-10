@@ -22,7 +22,7 @@ struct TabbView: View {
                         Label("График", systemImage: "chart.xyaxis.line")
                     }
                 
-                ExpensesView()
+                CategoryView()
                     .tabItem {
                         Label("Расходы", systemImage: "circle.grid.3x3.circle")
                     }

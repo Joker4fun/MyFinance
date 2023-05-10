@@ -9,12 +9,7 @@ import SwiftUI
 
 struct IncomeView: View {
     
-    @Environment(\.managedObjectContext) private var viewContext
-
-//    @FetchRequest(
-//        sortDescriptors: [NSSortDescriptor(keyPath: \BalanceEntiti.balance, ascending: false)],
-//        animation: .easeOut)
-    
+    @Environment(\.managedObjectContext) private var viewContext    
     @FetchRequest(sortDescriptors: [SortDescriptor(\BalanceEntiti.createDate, order: .reverse)])
    
   
@@ -32,9 +27,11 @@ struct IncomeView: View {
             VStack() {
                 HStack {
                     Text("Текущий баланс:")
+                        .padding(.leading)
                     Spacer()
                     Text("\(currentBalanceEntiti.rounded(.towardZero))")
                     Image(systemName: "rublesign")
+                        .padding(.trailing)
 
                 }
 
@@ -43,9 +40,12 @@ struct IncomeView: View {
                     .font(.largeTitle)
                     .bold()
         
-                    
-                    List(items) { expen in
-                        Text(String(expen.moneyCount))
+                    List{
+        
+                        ForEach(items) { expen in
+                            Text(String(expen.moneyCount))
+                        }
+                        .onDelete(perform: removeIncome(at:))
                     }
 
         
@@ -81,8 +81,16 @@ struct IncomeView: View {
 
     }
 
-    func addNew() {
-        
+    func removeIncome(at offsets: IndexSet) {
+        for index in offsets {
+            let income = items[index]
+            viewContext.delete(income)
+        }
+        do {
+            try viewContext.save()
+        } catch let error {
+            print(error.localizedDescription)
+        }
     }
 
 }

@@ -51,7 +51,7 @@ struct ChartView: View {
             .pickerStyle(.segmented)
             Chart(items) {
                 LineMark(
-                    x: .value("Month", $0.createDate!),
+                    x: .value("Month", $0.createDate ?? Date.now),
                     y: .value("Hours of Sunshine", $0.moneyCount)
                 )
             
