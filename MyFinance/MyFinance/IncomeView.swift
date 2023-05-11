@@ -29,7 +29,7 @@ struct IncomeView: View {
                     Text("Текущий баланс:")
                         .padding(.leading)
                     Spacer()
-                    Text("\(currentBalanceEntiti.rounded(.towardZero))")
+                    Text(String(format: "%.02f", currentBalanceEntiti))
                     Image(systemName: "rublesign")
                         .padding(.trailing)
 

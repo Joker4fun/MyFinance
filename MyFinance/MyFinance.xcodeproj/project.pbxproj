@@ -22,6 +22,7 @@
 		C5AACB7529F42E3D0008E4E6 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AACB7429F42E3D0008E4E6 /* KeyboardViewController.swift */; };
 		C5AACB7929F42E3D0008E4E6 /* keyboardAdd.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C5AACB7229F42E3D0008E4E6 /* keyboardAdd.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C5AACB7F2A0071800008E4E6 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AACB7E2A0071800008E4E6 /* Model.swift */; };
+		C5B56A1A2A0D871B001A656E /* ExpensesFromCategoryCharts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B56A192A0D871B001A656E /* ExpensesFromCategoryCharts.swift */; };
 		C5D8069B2A083ADD00C12A5D /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D806972A083ADD00C12A5D /* Category+CoreDataClass.swift */; };
 		C5D8069C2A083ADD00C12A5D /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D806982A083ADD00C12A5D /* Category+CoreDataProperties.swift */; };
 		C5D8069D2A083ADD00C12A5D /* Expens+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D806992A083ADD00C12A5D /* Expens+CoreDataClass.swift */; };
@@ -73,6 +74,7 @@
 		C5AACB7429F42E3D0008E4E6 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		C5AACB7629F42E3D0008E4E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5AACB7E2A0071800008E4E6 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		C5B56A192A0D871B001A656E /* ExpensesFromCategoryCharts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesFromCategoryCharts.swift; sourceTree = "<group>"; };
 		C5D806972A083ADD00C12A5D /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C5D806982A083ADD00C12A5D /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C5D806992A083ADD00C12A5D /* Expens+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expens+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				C56B299A29F41737004EC15A /* ModelData.swift */,
 				C56B299B29F41737004EC15A /* CategoryView.swift */,
 				C5D8069F2A086C6800C12A5D /* DetailVC.swift */,
+				C5B56A192A0D871B001A656E /* ExpensesFromCategoryCharts.swift */,
 				C5D806A32A099FF500C12A5D /* ListCellForExpensView.swift */,
 				C56B299D29F41737004EC15A /* IncomeView.swift */,
 				C5AACB7E2A0071800008E4E6 /* Model.swift */,
@@ -280,6 +283,7 @@
 				C57742622A032C3B000BCDD3 /* addButtonCategory.swift in Sources */,
 				C5D8069D2A083ADD00C12A5D /* Expens+CoreDataClass.swift in Sources */,
 				C56B29A129F41737004EC15A /* ChartView.swift in Sources */,
+				C5B56A1A2A0D871B001A656E /* ExpensesFromCategoryCharts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

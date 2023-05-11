@@ -11,7 +11,7 @@ struct DetailVC: View {
     
     @State private var showingSheet = false
     @Environment(\.managedObjectContext) var viewContext
-    @FetchRequest(entity: Expens.entity(), sortDescriptors: [])
+    @FetchRequest(entity: Expens.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Expens.time, ascending: true)])
     var expenses: FetchedResults<Expens>
     
     @StateObject var itemsInCategory: Category
@@ -20,9 +20,10 @@ struct DetailVC: View {
        
         VStack {
             Divider()
-            Button("График платежей") {
-                //
+            NavigationLink("График платежей"){
+                ExpensesFromCategoryCharts(expenFromCat: itemsInCategory)
             }
+         
             .frame(maxWidth: .infinity)
             .padding(.vertical)
             .background(.blue)

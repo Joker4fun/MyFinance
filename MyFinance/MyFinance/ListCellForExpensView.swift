@@ -14,7 +14,7 @@ struct ListCellForExpensView: View {
        lazy var stringDate = {
             let date = item.time
             let formatter1 = DateFormatter()
-           formatter1.dateStyle = .medium
+           formatter1.dateStyle = .short
             return formatter1.string(from: date)
             
         }()
@@ -23,7 +23,9 @@ struct ListCellForExpensView: View {
             Spacer()
             Text(stringDate)
             Spacer()
-            Text(String(item.count))
+            Text(String(item.count) + " P")
+                .frame(width: 70)
+
 
         })
     }
