@@ -8,33 +8,30 @@
 import SwiftUI
 
 struct TabbView: View {
-    var body: some View {
-        NavigationView {
-            TabView {
-                IncomeView(currentBalanceEntiti: 20)
-                    .tabItem {
-                        Label("Доходы", systemImage: "dollarsign.circle")
-                        
-                    }
-                
-                ChartView()
-                    .tabItem {
-                        Label("График", systemImage: "chart.xyaxis.line")
-                    }
-                
-                CategoryView()
-                    .tabItem {
-                        Label("Расходы", systemImage: "circle.grid.3x3.circle")
-                    }
-                
-            }
-            
-        }
+  var body: some View {
+    NavigationView {
+      TabView {
+        IncomeView(currentBalanceEntiti: 20)
+          .tabItem {
+            Label("Доходы", systemImage: "dollarsign.circle")
+          }
+        
+        ChartView()
+          .tabItem {
+            Label("График", systemImage: "chart.xyaxis.line")
+          }
+        
+        CategoryView()
+          .tabItem {
+            Label("Расходы", systemImage: "circle.grid.3x3.circle")
+          }
+      }
     }
+  }
 }
 
 struct TabbView_Previews: PreviewProvider {
-    static var previews: some View {
-        TabbView()
-    }
+  static var previews: some View {
+    TabbView()
+  }
 }

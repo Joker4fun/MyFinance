@@ -27,7 +27,7 @@ extension Category {
         let toExpensSet = toExpens as? Set<Expens> ?? []
         
         return toExpensSet.sorted {
-            $0.time < $1.time
+            $0.time! < $1.time!
         }
     }
 

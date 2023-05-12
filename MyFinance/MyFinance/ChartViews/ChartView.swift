@@ -17,9 +17,7 @@ enum Period: CaseIterable, Identifiable, CustomStringConvertible {
     case quarter
     case alltime
     
-    
     var id: Self { self }
-    
     var description: String {
         
         switch self {
@@ -35,34 +33,22 @@ enum Period: CaseIterable, Identifiable, CustomStringConvertible {
     }
 }
 
-
-
-
-
-
-
 struct ChartView: View {
-    
-    
-    
+
     @Environment(\.managedObjectContext) private var viewContext
-    
+  
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \BalanceEntiti.createDate, ascending: true)],
         animation: .easeOut)
     private var items: FetchedResults<BalanceEntiti>
-    
     
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Expens.time, ascending: true)],
         animation: .easeOut)
     private var expenItems: FetchedResults<Expens>
     
-    
     @State private var period: Period = .week
-    
     var body: some View{
-        
         
         VStack {
             Picker("timePiriod", selection: $period) {
@@ -77,103 +63,75 @@ struct ChartView: View {
                 case .week:
                     ForEach(items, id: \.createDate){
                         LineMark(
-                            x: .value("Month", $0.createDate!, unit: .weekday),
-                            y: .value("Hours of Sunshine", $0.moneyCount),
+                          x: .value("Week", $0.createDate ?? Date.now, unit: .weekday),
+                            y: .value("Count", $0.moneyCount),
                             series: .value("Income", "A")
                         )
                         .foregroundStyle(.green)
-
                     }
                     
                     ForEach(expenItems, id: \.time){
                         LineMark(
-                            x: .value("Month", $0.time, unit: .weekday),
-                            y: .value("Hours of Sunshine", $0.count)
+                          x: .value("Week", $0.time ?? Date.now, unit: .weekday),
+                            y: .value("Count", $0.count)
                         )
                         .foregroundStyle(.red)
-
                     }
                     
                 case .month:
                     ForEach(items){
                         LineMark(
-                            x: .value("Month", $0.createDate!, unit: .month),
-                            y: .value("Hours of Sunshine", $0.moneyCount),
+                            x: .value("Month", $0.createDate ?? Date.now, unit: .month),
+                            y: .value("Count", $0.moneyCount),
                             series: .value("Income", "A")
-
                         )
                         .foregroundStyle(.green)
 
                     }
                     ForEach(expenItems){
                         LineMark(
-                            x: .value("Month", $0.time, unit: .month),
-                            y: .value("Hours of Sunshine", $0.count)
+                            x: .value("Month", $0.time ?? Date.now, unit: .month),
+                            y: .value("Count", $0.count)
                         )
                         .foregroundStyle(.red)
-
                     }
                 case .quarter:
                     ForEach(items){
                         LineMark(
-                            x: .value("Month", $0.createDate!, unit: .quarter),
-                            y: .value("Hours of Sunshine", $0.moneyCount),
+                            x: .value("Quarter", $0.createDate ?? Date.now, unit: .quarter),
+                            y: .value("Count", $0.moneyCount),
                             series: .value("Income", "A")
-
                         )
                         .foregroundStyle(.green)
-
                     }
                     ForEach(expenItems){
                         LineMark(
-                            x: .value("Month", $0.time, unit: .quarter),
-                            y: .value("Hours of Sunshine", $0.count)
+                            x: .value("Quarter", $0.time ?? Date.now, unit: .quarter),
+                            y: .value("Count", $0.count)
                         )
                         .foregroundStyle(.red)
-
                     }
                 case .alltime:
                     ForEach(items){
                         LineMark(
-                            x: .value("Month", $0.createDate!),
-                            y: .value("Hours of Sunshine", $0.moneyCount),
+                            x: .value("All time", $0.createDate ?? Date.now),
+                            y: .value("Count", $0.moneyCount),
                             series: .value("Income", "A")
-
                         )
                         .foregroundStyle(.green)
-
                     }
                     ForEach(expenItems){
                         LineMark(
-                            x: .value("Month", $0.time),
-                            y: .value("Hours of Sunshine", $0.count)
+                            x: .value("All time", $0.time ?? Date.now),
+                            y: .value("Count", $0.count)
                         )
                         .foregroundStyle(.red)
-
                     }
-                    
-                    
-                    
                 }
-                    
             }
             .chartForegroundStyleScale(["Доходы": .green, "Расходы": .red])
-
-                
                     .padding(.all, 5)
-                
-                
             }
-            
-            
-            
-        }
-        
-    }
-    
-    
-    struct ChartView_Previews: PreviewProvider {
-        static var previews: some View {
-            ChartView()
         }
     }
+

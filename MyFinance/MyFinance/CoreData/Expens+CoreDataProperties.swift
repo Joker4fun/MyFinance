@@ -17,7 +17,7 @@ extension Expens {
     }
 
     @NSManaged public var name: String
-    @NSManaged public var time: Date
+    @NSManaged public var time: Date?
     @NSManaged public var count: Double
     @NSManaged public var allmoney: Double
     @NSManaged public var toCategory: Category?
